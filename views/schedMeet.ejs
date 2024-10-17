@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Meeting - Mentor Mentee Platform</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+   <style>
+      /* Overall Layout */
+.schedule-meeting-page {
+    background-color: #f3f4f7;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Back Button */
+.back-btn {
+    margin-bottom: 1rem;
+    align-self: flex-start;
+}
+
+.back-btn a {
+    text-decoration: none;
+    color: #002b5b;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.back-btn a:hover {
+    color: #ff6700;
+}
+
+.back-btn i {
+    margin-right: 8px;
+}
+
+/* Container to organize the content */
+.container {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+
+/* Meeting Link Section */
+.meeting-link-box {
+    margin-bottom: 2rem;
+}
+
+.meeting-link-box h2 {
+    font-size: 2rem;
+    color: #002b5b;
+}
+
+.meeting-link a {
+    display: inline-block;
+    background-color: #ff6700;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.meeting-link a:hover {
+    background-color: #002b5b;
+}
+
+/* Mentor Info Cards Section */
+.mentor-info-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.info-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card i {
+    font-size: 2rem;
+    color: #ff6700;
+    margin-bottom: 1rem;
+}
+
+.info-card p {
+    font-size: 1rem;
+    color: #002b5b;
+}
+
+.info-card a {
+    text-decoration: none;
+    color: #002b5b;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.info-card a:hover {
+    color: #ff6700;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Social Media Icons */
+.info-card .fab {
+    font-size: 1.5rem;
+    margin-right: 8px;
+}
+
+.info-card .fab:hover {
+    color: #ff6700;
+}
+
+   </style>
+
+   </head>
+<body>
+
+<!-- Schedule Meeting Page Start -->
+<section class="schedule-meeting-page">
+    <!-- Back Button -->
+    <div class="back-btn">
+        <a href="/pcard"><i class="fas fa-arrow-left"></i> Back to Find Mentor</a>
+    </div>
+
+    <div class="container">
+        <!-- Middle Section - Meeting Link -->
+        <div class="meeting-info">
+            <h2>Meeting Scheduled</h2>
+            <p>Your meeting with <strong>Dr. Satvir Singh</strong> is confirmed at Appointed Time</p>
+            <a href="https://meet.google.com/bxt-aftt-ode" class="meeting-link">Join Meeting Now</a>
+        </div>
+
+        <!-- Additional Information Cards -->
+        <div class="additional-info">
+            <!-- Card for Email -->
+            <div class="info-card">
+                <i class="fas fa-envelope"></i>
+                <h4>Email</h4>
+                <p>dr.satvir.ptu@gmail.com</p>
+            </div>
+
+            <!-- Card for Contact -->
+            <div class="info-card">
+                <i class="fas fa-phone"></i>
+                <h4>Contact</h4>
+                <p>+91 7009853307 </p>
+            </div>
+
+            <!-- Card for Social Handles -->
+            <div class="info-card">
+                <i class="fas fa-user-friends"></i>
+                <h4>Social Handles</h4>
+                <a href="https://www.instagram.com/drsatvir.ptu/?igsh=bnd0MHNzejllemp0"><p>@Dr. Satvir Singh</p></a>
+            </div>
+
+            <!-- Card for Profile -->
+            <div class="info-card">
+                <i class="fas fa-user"></i>
+                <h4>Profile</h4>
+                <a href="mentor-profile.html" class="profile-link">View Profile</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Schedule Meeting Page End -->
+
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Register - Mentor Mentee Platform</title>
+    <!-- <link rel="stylesheet" href="mntrreg.css"> -->
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+   <style>
+      /* Mentor Registration Page Styles */
+.mentor-registration-section {
+   font-family: 'Arial', sans-serif;
+   background-color: #f4f4f4;
+   padding: 2rem 1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+}
+
+.mentor-registration-container {
+   background-color: #ffffff;
+   padding: 1rem;
+   border-radius: 10px;
+   box-shadow: 0 8px 16px rgba(0, 43, 91, 0.1);
+   max-width: 600px;
+   width: 100%;
+   position: relative;
+}
+
+.mentor-registration-heading {
+   font-size: 2rem;
+   color: #002b5b;
+   text-align: center;
+   margin-bottom: 1.5rem;
+}
+
+.mentor-registration-form {
+   display: flex;
+   flex-direction: column;
+}
+
+.form-group {
+   margin-bottom: 1.5rem;
+}
+
+.form-group label {
+   display: block;
+   font-weight: bold;
+   margin-bottom: 0.5rem;
+   color: #002b5b;
+}
+
+.form-group select,
+.form-group input[type="time"] {
+   width: 100%;
+   padding: 0.75rem;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   font-size: 1rem;
+}
+
+.availability-schedule {
+   margin-top: 1.5rem;
+}
+
+.schedule-grid {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 1rem;
+}
+
+.day-schedule {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.day-schedule label {
+   flex: 1;
+   color: #002b5b;
+}
+
+.day-schedule input[type="time"] {
+   width: 40%;
+}
+
+.submit-button {
+   background-color: #ff6700;
+   color: #ffffff;
+   border: none;
+   padding: 0.75rem 1.5rem;
+   font-size: 1.2rem;
+   cursor: pointer;
+   border-radius: 5px;
+   transition: background-color 0.3s ease, transform 0.3s ease;
+   margin-top: 1rem;
+}
+
+.submit-button:hover {
+   background-color: #002b5b;
+   transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+   .schedule-grid {
+       grid-template-columns: 1fr;
+   }
+}
+/* Back Button */
+.back-button {
+   position: absolute;
+   top: 20px;
+   left: 20px;
+   color: #002b5b;
+   text-decoration: none;
+   font-size: 1rem;
+   display: flex;
+   align-items: center;
+   transition: color 0.3s ease;
+}
+
+.back-button:hover {
+   color: #ff6700;
+}
+
+.back-button i {
+   margin-right: 5px;
+}
+
+
+
+
+      /* Registration Page Styles */
+      .registration-section {
+   font-family: 'Arial', sans-serif;
+   background-color: #f4f4f4;
+   padding: 2rem 1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+}
+
+.registration-container {
+   background-color: #ffffff;
+   padding: 0 1rem 0 1rem;
+   /* border-radius: 10px; */
+   /* box-shadow: 0 8px 16px rgba(0, 43, 91, 0.1); */
+   max-width: 560px;
+   width: 100%;
+}
+
+.registration-heading {
+   font-size: 2rem;
+   color: #002b5b;
+   text-align: center;
+   margin-bottom: 1.5rem;
+}
+
+.registration-form {
+   display: flex;
+   flex-direction: column;
+}
+
+.form-group {
+   margin-bottom: 1.5rem;
+}
+
+.form-group label {
+   display: block;
+   font-weight: bold;
+   margin-bottom: 0.5rem;
+   color: #002b5b;
+}
+
+.form-group input,
+.form-group textarea {
+   width: 100%;
+   padding: 0.75rem;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   font-size: 1rem;
+}
+
+.form-group input[type="file"] {
+   padding: 0;
+}
+
+.mentor-mentee-choice {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.mentor-mentee-buttons {
+   display: flex;
+   justify-content: space-around;
+   width: 100%;
+   margin-top: 1rem;
+}
+
+.choice-button {
+   background-color: #002b5b;
+   color: #ffffff;
+   border: none;
+   padding: 0.75rem 1.5rem;
+   font-size: 1rem;
+   cursor: pointer;
+   border-radius: 5px;
+   transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.choice-button:hover {
+   background-color: #ff6700;
+   transform: scale(1.05);
+}
+
+.submit-button {
+   background-color: #ff6700;
+   color: #ffffff;
+   border: none;
+   padding: 0.75rem 1.5rem;
+   font-size: 1.2rem;
+   cursor: pointer;
+   border-radius: 5px;
+   transition: background-color 0.3s ease, transform 0.3s ease;
+   margin-top: 1rem;
+}
+
+.submit-button:hover {
+   background-color: #002b5b;
+   transform: scale(1.05);
+}
+
+/* Baxk Button */
+.back-button {
+   position: absolute;
+   top: 20px;
+   left: 20px;
+   color: #002b5b;
+   text-decoration: none;
+   font-size: 1rem;
+   display: flex;
+   align-items: center;
+   transition: color 0.3s ease;
+}
+
+.back-button:hover {
+   color: #ff6700;
+}
+
+.back-button i {
+   margin-right: 5px;
+}
+   </style>
+
+   </head>
+<body>
+
+<!-- Mentor Registration Page Start -->
+<section class="mentor-registration-section">
+    <div class="mentor-registration-container">
+      
+         <!-- Back Button -->
+         <a href="/register" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+        <h2 class="mentor-registration-heading">Mentor Register</h2>
+        <form class="mentor-registration-form" id="mentorRegistrationForm" action="/register/mntrreg" method="post">   
+         <div class="registration-container">
+         <!-- Name Input -->
+           <div class="form-group">
+            <label for="name">Enter Name</label>
+            <input type="text" id="name" name="name" value="<%= user ? user.name : '' %>" placeholder="Enter your name" required>
+        </div>
+        <!-- Email Input -->
+        <div class="form-group">
+            <label for="email">Enter Email</label>
+            <input type="email" id="email" name="email" value="<%= user ? user.email : '' %>" placeholder="Enter your email" required>
+        </div>
+        <!-- Password Input -->
+        <div class="form-group">
+            <label for="password">Create Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <!-- User Image Input -->
+        <div class="form-group">
+            <label for="user-image">Upload Your Image</label>
+            <input type="file" id="user-image" name="image" value="<%= user ? user.image : '' %>" accept="image/*" >
+        </div>
+        <!-- Additional Details Input -->
+        <div class="form-group">
+            <label for="additional-details">Additional Qualification Details</label>
+            <textarea id="additional-details" name="details" value="<%= user ? user.details : '' %>" rows="4" placeholder="Tell about Your Stream and Designation" required></textarea>
+        </div>
+        </div>
+            <!-- Industry Input -->
+            <div class="form-group">
+                <label for="industry">Industry</label>
+                <select id="industry" name="industry" value="<%= user ? user.industry : '' %>" required>
+                    <option value="" disabled selected>Select your industry</option>
+                    <option value="technology">Technology</option>
+                    <option value="finance">Finance</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="education">Education</option>
+                    <option value="marketing">Marketing</option>
+                    <!-- Add more industries as needed -->
+                </select>
+            </div>
+            <!-- Experience Level Input -->
+            <div class="form-group">
+                <label for="experience-level">Experience Level (Position)</label>
+                <select id="experience-level" name="level" value="<%= user ? user.level : '' %>" required>
+                    <option value="" disabled selected>Select your experience level</option>
+                    <option value="student">Student Level</option>
+                    <option value="entry">Entry Level</option>
+                    <option value="mid">Mid Level</option>
+                    <option value="senior">Senior Level</option>
+                    <option value="executive">Executive Level</option>
+                </select>
+            </div>
+            <!-- Language Input -->
+            <div class="form-group">
+                <label for="language">Language</label>
+                <select id="language" name="language" value="<%= user ? user.language : '' %>" required>
+                    <option value="" disabled selected>Select a language</option>
+                    <option value="english">English</option>
+                    <option value="spanish">Spanish</option>
+                    <option value="french">French</option>
+                    <option value="german">German</option>
+                    <option value="mandarin">Mandarin</option>
+                    <!-- Add more languages as needed -->
+                </select>
+            </div>
+            <!-- Availability Schedule Input -->
+            <div class="form-group availability-schedule">
+                <label>Availability Schedule</label>
+                <div class="schedule-grid">
+                    <!-- Days of the week with time selection -->
+                    <div class="day-schedule">
+                        <label>Monday</label>
+                        <input type="time" name="mondaystart" value="<%= user ? user.mondaystart : '' %>" required> to
+                        <input type="time" name="mondayend" value="<%= user ? user.mondayend : '' %>" required>
+                    </div>
+                    <div class="day-schedule">
+                        <label>Tuesday</label>
+                        <input type="time" name="tuesdaystart" value="<%= user ? user.tuesdaystart : '' %>" required> to
+                        <input type="time" name="tuesdayend" value="<%= user ? user.tuesdayend : '' %>" required>
+                    </div>
+                    <div class="day-schedule">
+                        <label>Wednesday</label>
+                        <input type="time" name="wednesdaystart" value="<%= user ? user.wednesdaystart : '' %>" required> to
+                        <input type="time" name="wednesdayend" value="<%= user ? user.wednesdayend : '' %>" required>
+                    </div>
+                    <div class="day-schedule">
+                        <label>Thursday</label>
+                        <input type="time" name="thursdaystart" value="<%= user ? user.thursdaystart : '' %>" required> to
+                        <input type="time" name="thursdayend" value="<%= user ? user.thursdayend : '' %>" required>
+                    </div>
+                    <div class="day-schedule">
+                        <label>Friday</label>
+                        <input type="time" name="fridaystart" value="<%= user ? user.fridaystart : '' %>" required> to
+                        <input type="time" name="fridayend" value="<%= user ? user.fridayend : '' %>" required>
+                    </div>
+                    <div class="day-schedule">
+                        <label>Saturday</label>
+                        <input type="time" name="saturdaystart" value="<%= user ? user.saturdaystart : '' %>" required> to
+                        <input type="time" name="saturdayend" value="<%= user ? user.saturdayend : '' %>" required>
+                    </div>
+                    <div class="day-schedule">
+                        <label>Sunday</label>
+                        <input type="time" name="sundaystart" value="<%= user ? user.sundaystart : '' %>" required> to
+                        <input type="time" name="sundayend" value="<%= user ? user.sundayend : '' %>" required>
+                    </div>
+                </div>
+            </div>
+            <!-- Finish Registration Button -->
+            <button type="submit" class="submit-button">Register as Mentor</button>
+        </form>
+    </div>
+</section>
+<!-- Mentor Registration Page End -->
+
+<script>
+   // Mentor Registration Form Submission
+// document.getElementById('mentorRegistrationForm').addEventListener('submit', function (event) {
+//     event.preventDefault(); // Prevent form submission for demonstration
+
+//     alert('Mentor Registration Submitted Successfully!');
+
+//     // Here, you can add logic to submit the form data to your backend
+// });
+
+</script>
+
+</body>
+</html>

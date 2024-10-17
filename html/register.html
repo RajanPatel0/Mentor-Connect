@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Mentor Mentee Platform</title>
+    <link rel="stylesheet" href="register.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<!-- Registration Page Start -->
+<section class="registration-section">
+    <div class="registration-container">
+
+         <!-- Back Button -->
+        <a href="Main.ejs" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+        <h2 class="registration-heading">Create Your Account</h2>
+        <form class="registration-form" id="registrationForm">
+            <!-- Name Input -->
+            <div class="form-group">
+                <label for="name">Enter Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <!-- Email Input -->
+            <div class="form-group">
+                <label for="email">Enter Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <!-- Password Input -->
+            <div class="form-group">
+                <label for="password">Create Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <!-- User Image Input -->
+            <div class="form-group">
+                <label for="user-image">Upload Your Image</label>
+                <input type="file" id="user-image" name="user-image" accept="image/*" required>
+            </div>
+            <!-- Additional Details Input -->
+            <div class="form-group">
+                <label for="additional-details">Additional Qualification Details</label>
+                <textarea id="additional-details" name="additional-details" rows="4" placeholder="Tell about Your Stream and Designation"></textarea>
+            </div>
+            <!-- Mentor or Mentee Selection -->
+            <div class="form-group mentor-mentee-choice">
+                <label>Continue Registration As:</label>
+                <div class="mentor-mentee-buttons">
+                  <a href="mntrreg.html" style="color: white;"><button type="button" class="choice-button" id="mentorButton">Mentor</button></a>
+                  <a href="mteereg.html" style="color: white;"><button type="button" class="choice-button" id="menteeButton">Mentee</button></a>
+                </div>
+            </div>
+            <!-- Submit Button -->
+            <button type="submit" class="submit-button">Select One You Want To Continue</button>
+        </form>
+    </div>
+</section>
+<!-- Registration Page End -->
+
+<script src="script.js"></script>
+</body>
+</html>

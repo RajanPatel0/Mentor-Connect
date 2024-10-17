@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor-Mentee Platform</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-logo">WiseHive</a>
+            <div class="navbar-menu" id="navbarMenu">
+                <a href="#" class="navbar-item">Home</a>
+                <a href="#" class="navbar-item">Mentors</a>
+                <a href="#" class="navbar-item">Mentees</a>
+                <a href="#" class="navbar-item">How It Works</a>
+                <a href="#" class="navbar-item">About Us</a>
+                <a href="#" class="navbar-item">Contact</a>
+                <a href="/login.html"><button class="navbar-login">Login</button></a>
+            </div>
+            <div class="navbar-toggle" id="navbarToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero Section Start -->
+<section class="hero">
+   
+   <div class="hero-container">
+      <div class="hero-search-bar">
+         <input type="text" placeholder="Search for mentors or topics..." />
+         <button type="button">Search</button>
+      </div>
+      <div class="hcm">
+       <!-- Left Part -->  
+       <div class="hero-left">
+           <h3 class="hero-tagline">Empower Your Growth- Connect. Learn. Grow.</h3>
+           <h1 class="hero-title">Connect with Experienced Mentors</h1>
+           <p class="hero-description">
+               Discover the power of mentorship with <b style="color: #ff6700;">WiseHive</b>. Whether you're seeking guidance or looking to share your experience, our platform connects mentors and mentees to help you grow professionally and personally.
+           </p>
+           <a href="/register.html" style="color: white;"><button class="hero-button">Get Started</button></a>
+       </div>
+       <!-- Right Part -->
+       <div class="hero-right">
+           <div class="hero-images">
+               <div class="image-overlay image1"></div>
+               <div class="image-overlay image2"></div>
+               <div class="image-overlay image3"></div>
+           </div>
+       </div>
+      </div> 
+   </div>
+</section>
+<!-- Hero Section End -->
+
+<!-- Feature Section Start -->
+<section class="feature-section">
+   <div class="feature-container">
+       <!-- Find Mentor Card -->
+       <div class="feature-card">
+           <div class="card-content">
+               <h2 class="card-title">Find Mentor</h2>
+               <p class="card-description">
+                   Discover experienced mentors to guide you in your career or personal growth journey. Connect, learn, and succeed.
+               </p>
+               <button class="card-button">Find Mentor</button>
+           </div>
+       </div>
+       <!-- Become Mentor Card -->
+       <div class="feature-card">
+           <div class="card-content">
+               <h2 class="card-title">Become Mentor</h2>
+               <p class="card-description">
+                   Share your knowledge and experience with those who need guidance. Mentor the next generation and make an impact.
+               </p>
+               <button class="card-button">Become Mentor</button>
+           </div>
+       </div>
+   </div>
+</section>
+<!-- Feature Section End -->
+<!-- Profile Listing Section Start -->
+<section class="profile-listing-section">
+   <div class="profile-listing-container">
+       <!-- Left Side: Profile List/Grid View -->
+       <div class="profile-list">
+           <!-- Example Profile Card -->
+           <div class="profile-card">
+               <img src="https://via.placeholder.com/100" alt="Profile Picture" class="profile-picture">
+               <div class="profile-info">
+                   <h3 class="profile-name">Dr. Satvir Singh</h3>
+                   <p class="profile-profession">Prof. Artificial Intelligence</p>
+                   <p class="profile-bio">Experienced in Artificial Intelligence and passionate about teaching coding to students.</p>
+               </div>
+           </div>
+           <div class="profile-card">
+               <img src="https://via.placeholder.com/100" alt="Profile Picture" class="profile-picture">
+               <div class="profile-info">
+                   <h3 class="profile-name">Rajan Patel</h3>
+                   <p class="profile-profession">Computer Science & adv. Law</p>
+                   <p class="profile-bio">Data enthusiast with expertise in machine learning and data visualization.</p>
+               </div>
+           </div>
+           <!-- Add more profile cards as needed -->
+       </div>
+       
+       <!-- Right Side: Filter and Sort Options -->
+       <div class="filter-sort">
+           <h2 class="filter-title">Filter & Sort Options</h2>
+           <div class="filter-option">
+               <label for="industry">Industry:</label>
+               <select id="industry">
+                   <option value="">Select Industry</option>
+                   <option value="computerscience">Computer Science</option>
+                   <option value="tech">Technology</option>
+                   <option value="finance">Finance</option>
+                   <option value="education">Education</option>
+                   <option value="law">Law</option>
+                   <option value="medical">Medical</option>
+                   <option value="ai">AI</option>
+                   <option value="banking">Banking</option>
+               </select>
+           </div>
+           <div class="filter-option">
+               <label for="experience">Experience Level:</label>
+               <select id="experience">
+                   <option value="">Select Experience Level</option>
+                   <option value="ug">In UG</option>
+                   <option value="pg">In PG</option>
+                   <option value="junior">Junior</option>
+                   <option value="mid">Mid</option>
+                   <option value="senior">Senior</option>
+               </select>
+           </div>
+           <div class="filter-option">
+               <label for="location">Location:</label>
+               <input type="text" id="location" placeholder="Enter location">
+           </div>
+           <div class="filter-option">
+               <label for="language">Language:</label>
+               <select id="language">
+                   <option value="">Select Language</option>
+                   <option value="english">English</option>
+                   <option value="hindi">Hindi</option>
+                   <option value="punjabi">Punjabi</option>
+               </select>
+           </div>
+           <button class="filter-button">Apply Filters</button>
+       </div>
+   </div>
+</section>
+<!-- Profile Listing Section End -->
+<!-- Testimonial Section Start -->
+<section class="testimonial-section">
+   <h2 class="testimonial-heading">Success Stories</h2>
+   <div class="testimonial-container">
+       <!-- Testimonial 1 -->
+       <div class="testimonial-card">
+           <img src="https://via.placeholder.com/80" alt="Mentor/Mentee Photo" class="testimonial-photo">
+           <div class="testimonial-quote">
+               <p>"Mentoring has been a game-changer for my career. The insights I've gained are invaluable!"</p>
+               <span>- Rajan Patel, Software Engineer</span>
+           </div>
+       </div>
+       <!-- Testimonial 2 -->
+       <div class="testimonial-card">
+           <img src="https://via.placeholder.com/80" alt="Mentor/Mentee Photo" class="testimonial-photo">
+           <div class="testimonial-quote">
+               <p>"Being a mentor allowed me to give back and help others achieve their goals."</p>
+               <span>- Alferd Noble, Marketing Specialist</span>
+           </div>
+       </div>
+       <!-- Repeat similar testimonial-card blocks for more testimonials -->
+       <!-- Testimonial 3 -->
+       <div class="testimonial-card">
+           <img src="https://via.placeholder.com/80" alt="Mentor/Mentee Photo" class="testimonial-photo">
+           <div class="testimonial-quote">
+               <p>"I found the guidance I needed to transition to a new industry thanks to this platform."</p>
+               <span>- Nitesh, Data Analyst</span>
+           </div>
+       </div>
+       <!-- Testimonial 4 -->
+       <div class="testimonial-card">
+         <img src="https://via.placeholder.com/80" alt="Mentor/Mentee Photo" class="testimonial-photo">
+         <div class="testimonial-quote">
+             <p>"I found the guidance I needed to transition to a new industry thanks to this platform."</p>
+             <span>- Alex Johnson, Data Analyst</span>
+         </div>
+       </div>
+       <!-- Add more testimonials here -->
+   </div>
+</section>
+<!-- Testimonial Section End -->
+<!-- Footer Section Start -->
+<footer class="footer-section">
+   <div class="footer-container">
+       <!-- Quick Links -->
+       <div class="footer-column">
+           <h3 class="footer-heading">Quick Links</h3>
+           <ul class="footer-links">
+               <li><a href="#">Home</a></li>
+               <li><a href="#">About Us</a></li>
+               <li><a href="#">Terms of Service</a></li>
+               <li><a href="#">Privacy Policy</a></li>
+               <li><a href="#">FAQs</a></li>
+               <li><a href="#">Contact</a></li>
+           </ul>
+       </div>
+
+       <!-- Social Media Icons -->
+       <div class="footer-column">
+           <h3 class="footer-heading">Follow Us</h3>
+           <div class="social-icons">
+               <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+               <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+               <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+               <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+           </div>
+       </div>
+
+       <!-- Contact Information -->
+       <div class="footer-column">
+           <h3 class="footer-heading">Contact Us</h3>
+           <p class="footer-contact">I.K.G Punjab Technical University(Main Campus), Jalandhar, India</p>
+           <p class="footer-contact">Email: wisehiveinfo@gmail.com</p>
+           <p class="footer-contact">Phone: +123 456 7890</p>
+       </div>
+   </div>
+   <div class="footer-bottom">
+       <p>&copy; 2024 Mentor Mentee Connecting Platform. All Rights Reserved.</p>
+   </div>
+</footer>
+<!-- Footer Section End -->
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

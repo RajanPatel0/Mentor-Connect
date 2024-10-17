@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Mentor Mentee Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+   <style>
+      /* Profile Page Styles */
+.profile-section {
+    background-color: #f4f4f4;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.profile-container {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 43, 91, 0.1);
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #002b5b;
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: #ff6700;
+}
+
+.logout-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #ff6700;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #002b5b;
+    transform: scale(1.05);
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 2px solid #002b5b;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info h2 {
+    font-size: 1.8rem;
+    color: #002b5b;
+    margin-bottom: 0.5rem;
+}
+
+.profile-info p {
+    font-size: 1rem;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+.schedule h3 {
+    font-size: 1.2rem;
+    color: #002b5b;
+    margin-top: 1rem;
+}
+
+.schedule ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.schedule li {
+    font-size: 1rem;
+    color: #333;
+    margin: 0.25rem 0;
+}
+/* Let's Connect Button Styles */
+.connect-button {
+    background-color: #ff6700;
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1rem;
+}
+
+.connect-button:hover {
+    background-color: #002b5b;
+    transform: scale(1.05);
+}
+
+/* Edit Profile Button Styles */
+.edit-button {
+    position: absolute;
+    top: 70px; /* Positioned below the logout button */
+    right: 20px;
+    background-color: transparent;
+    color: #002b5b;
+    border: 2px solid #002b5b;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.edit-button:hover {
+    background-color: #ff6700;
+    color: #ffffff;
+}
+
+
+   </style>
+
+</head>
+<body>
+
+<!-- Profile Page Start -->
+<section class="profile-section">
+    <div class="profile-container">
+        <!-- Back Button -->
+        <a href="/" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        
+        <!-- Logout Button -->
+        <a href="/logout"><button class="logout-button" onclick="logout()">Logout</button></a>
+        
+        <!-- Edit Profile Button -->
+        <!-- <a href=""><button class="edit-button" onclick="editProfile()">Edit Profile</button></a> -->
+        <!-- Edit Profile Button -->
+        <% if (user.role === 'mentor') { %>
+            <a href="/edit/mentor"><button class="edit-button">Edit Profile</button></a>
+        <% } else if (user.role === 'mentee') { %>
+            <a href="/edit/mentee"><button class="edit-button">Edit Profile</button></a>
+        <% } %>
+
+
+        <!-- Profile Content -->
+        <div class="profile-content">
+            <!-- Profile Image -->
+            <div class="profile-image">
+                <img src="<%= user.image %>" alt="User Image" id="profileImage">
+            </div>
+            <!-- Profile Information -->
+            <div class="profile-info">
+                <h2 id="userName"><%= user.name %></h2>
+                <p class="role" id="userRole">Role: <%= user.role %></p>
+                <p class="bio" id="userBio">Bio: <%= user.details %></p>
+                <p class="industry" id="userIndustry">Industry/Field: <%= user.industry %></p>
+                <p class="experience-level" id="userLevel">Experience Level: <%= user.level %></p>
+                <p class="language" id="userLanguage">Language: <%= user.language %></p>
+                <!-- Schedule -->
+                <div class="schedule" id="userSchedule">
+                    <h3>Schedule:</h3>
+                    <ul>
+                        <li>Monday: 9:00 AM - 5:00 PM</li>
+                        <li>Tuesday: 9:00 AM - 5:00 PM</li>
+                        <!-- Add other days as needed -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <a href="/"><button class="connect-button" onclick="connectUser()">Schedule Meet</button></a>
+    </div>
+</section>
+<!-- Profile Page End -->
+
+<script>
+    function editProfile(role) {
+            if (role === 'mentor') {
+                window.location.href = '/register/mntrreg';
+            } else if (role === 'mentee') {
+                window.location.href = '/register/mteereg';
+            }
+        }
+   // Mock function to simulate logout
+// function logout() {
+//     alert('You have been logged out successfully.');
+//     window.location.href = 'index.html'; // Redirect to home page
+// }
+
+// // Function to dynamically populate profile data
+// document.addEventListener('DOMContentLoaded', function () {
+//     // Assume these values are fetched from a backend or local storage
+//     const userData = {
+//         role: 'Mentor', // or 'Mentee'
+//         name: 'John Doe',
+//         image: 'path/to/user-image.jpg', // Replace with the actual image path
+//         bio: 'Passionate about teaching and helping others grow.',
+//         industry: 'Technology',
+//         level: 'Advanced',
+//         language: 'English',
+//         schedule: {
+//             Monday: '9:00 AM - 5:00 PM',
+//             Tuesday: '9:00 AM - 5:00 PM',
+//             // Add other days as needed
+//         }
+//     };
+
+    // Update the profile page with user data
+//     document.getElementById('userRole').textContent = `Role: ${userData.role}`;
+//     document.getElementById('userName').textContent = userData.name;
+//     document.getElementById('profileImage').src = userData.image;
+//     document.getElementById('userBio').textContent = `Bio: ${userData.bio}`;
+//     document.getElementById('userIndustry').textContent = `Industry/Field: ${userData.industry}`;
+//     document.getElementById('userLevel').textContent = `Experience Level: ${userData.level}`;
+//     document.getElementById('userLanguage').textContent = `Language: ${userData.language}`;
+
+//     // Populate schedule
+//     const scheduleList = document.getElementById('userSchedule').querySelector('ul');
+//     scheduleList.innerHTML = ''; // Clear any existing schedule
+//     for (const day in userData.schedule) {
+//         const listItem = document.createElement('li');
+//         listItem.textContent = `${day}: ${userData.schedule[day]}`;
+//         scheduleList.appendChild(listItem);
+//     }
+// });
+
+</script>
+</body>
+</html>

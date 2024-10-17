@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Hub - Mentor Mentee Platform</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+   <style>
+      /* Resource Hub Section */
+.resource-hub-section {
+    background-color: #f3f4f7;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Container to split sections */
+.container {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Left Section - Learning Resources */
+.resources-left {
+    width: 60%;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #002b5b;
+    margin-bottom: 1rem;
+}
+
+.resource-item {
+    margin-bottom: 2rem;
+}
+
+.resource-item h3 {
+    font-size: 1.4rem;
+    color: #ff6700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.resource-item h3 i {
+    margin-right: 10px;
+}
+
+.resource-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.resource-item ul li {
+    margin-bottom: 0.5rem;
+}
+
+.resource-item ul li a {
+    text-decoration: none;
+    color: #002b5b;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.resource-item ul li a:hover {
+    color: #ff6700;
+}
+
+/* Right Section - Recommended Resources */
+.resources-right {
+    width: 35%;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.recommended-resource {
+    margin-bottom: 2rem;
+}
+
+.recommended-resource p {
+    font-size: 1.2rem;
+    color: #002b5b;
+    display: flex;
+    align-items: center;
+}
+
+.recommended-resource p i {
+    margin-right: 8px;
+    color: #ff6700;
+}
+
+.recommended-resource p a {
+    text-decoration: none;
+    color: #002b5b;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.recommended-resource p a:hover {
+    color: #ff6700;
+}
+
+   </style>
+
+   </head>
+<body>
+
+<!-- Resource Hub Section Start -->
+<section class="resource-hub-section">
+    <div class="container">
+        <!-- Left Section: Learning Resources -->
+        <div class="resources-left">
+            <h2 class="section-title">Learning Resources</h2>
+            <!-- Video Resources -->
+            <div class="resource-item">
+                <h3><i class="fas fa-video"></i> Videos</h3>
+                <ul>
+                    <li><a href="#" target="_blank">Introduction to Machine Learning</a></li>
+                    <li><a href="https://www.freshgravity.com/a-deep-dive-into-ai-ml-and-dl/#:~:text=AI%20is%20any%20program%20that,a%20subset%20of%20machine%20learning." target="_blank">Deep Dive into AI Algorithms</a></li>
+                    <li><a href="#" target="_blank">Web Development Basics</a></li>
+                </ul>
+            </div>
+            <!-- Articles -->
+            <div class="resource-item">
+                <h3><i class="fas fa-file-alt"></i> Articles</h3>
+                <ul>
+                    <li><a href="#" target="_blank">10 Tips to Improve Your Coding Skills</a></li>
+                    <li><a href="#" target="_blank">Best Practices in Project Management</a></li>
+                    <li><a href="https://builtin.com/artificial-intelligence/artificial-intelligence-future" target="_blank">The Future of Artificial Intelligence</a></li>
+                </ul>
+            </div>
+            <!-- PDFs -->
+            <div class="resource-item">
+                <h3><i class="fas fa-file-pdf"></i> PDFs</h3>
+                <ul>
+                    <li><a href="https://github.com/AmandaZou/Data-Science-books-/blob/master/Mastering%20Python%20for%20Data%20Science.pdf" target="_blank">Python for Data Science - Complete Guide</a></li>
+                    <li><a href="#" target="_blank">Introduction to JavaScript</a></li>
+                </ul>
+            </div>
+            <!-- E-books -->
+            <div class="resource-item">
+                <h3><i class="fas fa-book"></i> E-books</h3>
+                <ul>
+                    <li><a href="#" target="_blank">Mastering Data Structures & Algorithms</a></li>
+                    <li><a href="https://blog.hubspot.com/website/website-development" target="_blank">The Complete Guide to Web Development</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Section: Recommended Resources -->
+        <div class="resources-right">
+            <h2 class="section-title">Recommended Resources</h2>
+            <div class="recommended-resource">
+                <p><i class="fas fa-thumbtack"></i> <strong>Machine Learning Roadmap</strong> - Pinned by Mentor: Dr. Satvir Singh</p>
+                <p><a href="https://github.com/mrdbourke/machine-learning-roadmap" target="_blank">Start Learning Machine Learning</a></p>
+            </div>
+            <div class="recommended-resource">
+                <p><i class="fas fa-thumbtack"></i> <strong>Top 10 JavaScript Libraries in 2024</strong> - Pinned by Mentor: Mr. Deepak</p>
+                <p><a href="#" target="_blank">Read Article</a></p>
+            </div>
+            <div class="recommended-resource">
+                <p><i class="fas fa-thumbtack"></i> <strong>Best Practices in Agile Development</strong> - Pinned by Mentor: Dr. Williams</p>
+                <p><a href="https://www.researchgate.net/publication/228555529_Best_Practices_in_Agile_Software_Development" target="_blank">Download PDF</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Resource Hub Section End -->
+
+<script src="script.js"></script>
+</body>
+</html>

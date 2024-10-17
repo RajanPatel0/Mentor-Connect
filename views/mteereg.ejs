@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentee Register - Mentor Mentee Platform</title>
+    <!-- <link rel="stylesheet" href="mteereg.css"> -->
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+   <style>
+      /* Mentee Registration Page Styles */
+.mentee-registration-section {
+   font-family: 'Arial', sans-serif;
+   background-color: #f4f4f4;
+   padding: 2rem 1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+}
+
+.mentee-registration-container {
+   background-color: #ffffff;
+   padding: 1rem;
+   border-radius: 10px;
+   box-shadow: 0 8px 16px rgba(0, 43, 91, 0.1);
+   max-width: 600px;
+   width: 100%;
+   position: relative;
+}
+
+.mentee-registration-heading {
+   font-size: 2rem;
+   color: #002b5b;
+   text-align: center;
+   margin-bottom: 1.5rem;
+}
+
+.mentee-registration-form {
+   display: flex;
+   flex-direction: column;
+}
+
+.form-group {
+   margin-bottom: 1.5rem;
+}
+
+.form-group label {
+   display: block;
+   font-weight: bold;
+   margin-bottom: 0.5rem;
+   color: #002b5b;
+}
+
+.form-group select {
+   width: 100%;
+   padding: 0.75rem;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   font-size: 1rem;
+}
+
+.submit-button {
+   background-color: #ff6700;
+   color: #ffffff;
+   border: none;
+   padding: 0.75rem 1.5rem;
+   font-size: 1.2rem;
+   cursor: pointer;
+   border-radius: 5px;
+   transition: background-color 0.3s ease, transform 0.3s ease;
+   margin-top: 1rem;
+}
+
+.submit-button:hover {
+   background-color: #002b5b;
+   transform: scale(1.05);
+}
+
+/* Back Button Styles */
+.back-button {
+   position: absolute;
+   top: 20px;
+   left: 20px;
+   color: #002b5b;
+   text-decoration: none;
+   font-size: 1rem;
+   display: flex;
+   align-items: center;
+   transition: color 0.3s ease;
+}
+
+.back-button:hover {
+   color: #ff6700;
+}
+
+.back-button i {
+   margin-right: 5px;
+}
+
+
+
+
+      /* Registration Page Styles */
+.registration-section {
+   font-family: 'Arial', sans-serif;
+   background-color: #f4f4f4;
+   padding: 2rem 1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+}
+
+.registration-container {
+   background-color: #ffffff;
+   padding: 0rem 1rem 0 1rem;
+   /* border-radius: 10px;
+   box-shadow: 0 8px 16px rgba(0, 43, 91, 0.1); */
+   max-width: 550px;
+   width: 100%;
+}
+
+.registration-heading {
+   font-size: 2rem;
+   color: #002b5b;
+   text-align: center;
+   margin-bottom: 1.5rem;
+}
+
+.registration-form {
+   display: flex;
+   flex-direction: column;
+}
+
+.form-group {
+   margin-bottom: 1.5rem;
+}
+
+.form-group label {
+   display: block;
+   font-weight: bold;
+   margin-bottom: 0.5rem;
+   color: #002b5b;
+}
+
+.form-group input,
+.form-group textarea {
+   width: 100%;
+   padding: 0.75rem;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   font-size: 1rem;
+}
+
+.form-group input[type="file"] {
+   padding: 0;
+}
+
+.mentor-mentee-choice {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.mentor-mentee-buttons {
+   display: flex;
+   justify-content: space-around;
+   width: 100%;
+   margin-top: 1rem;
+}
+
+.choice-button {
+   background-color: #002b5b;
+   color: #ffffff;
+   border: none;
+   padding: 0.75rem 1.5rem;
+   font-size: 1rem;
+   cursor: pointer;
+   border-radius: 5px;
+   transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.choice-button:hover {
+   background-color: #ff6700;
+   transform: scale(1.05);
+}
+
+.submit-button {
+   background-color: #ff6700;
+   color: #ffffff;
+   border: none;
+   padding: 0.75rem 1.5rem;
+   font-size: 1.2rem;
+   cursor: pointer;
+   border-radius: 5px;
+   transition: background-color 0.3s ease, transform 0.3s ease;
+   margin-top: 1rem;
+}
+
+.submit-button:hover {
+   background-color: #002b5b;
+   transform: scale(1.05);
+}
+
+/* Baxk Button */
+.back-button {
+   position: absolute;
+   top: 20px;
+   left: 20px;
+   color: #002b5b;
+   text-decoration: none;
+   font-size: 1rem;
+   display: flex;
+   align-items: center;
+   transition: color 0.3s ease;
+}
+
+.back-button:hover {
+   color: #ff6700;
+}
+
+.back-button i {
+   margin-right: 5px;
+}
+   </style>
+
+   </head>
+<body>
+<!-- Registration Page Start -->
+
+<!-- Mentee Registration Page Start -->
+<section class="mentee-registration-section">
+    <div class="mentee-registration-container">
+        <!-- Back Button -->
+        <a href="/register" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+        <h2 class="mentee-registration-heading">Mentee Register</h2>
+        <form class="mentee-registration-form" id="menteeRegistrationForm" action="/register/mteereg" method="post">
+         <div class="registration-container">
+         <!-- Name Input -->
+           <div class="form-group">
+               <label for="name">Enter Name</label>
+               <input type="text" id="name" name="name" value="<%= user ? user.name : '' %>" placeholder="Enter your name" required>
+           </div>
+           <!-- Email Input -->
+           <div class="form-group">
+               <label for="email">Enter Email</label>
+               <input type="email" id="email" name="email" value="<%= user ? user.email : '' %>" placeholder="Enter your email" required>
+           </div>
+           <!-- Password Input -->
+           <div class="form-group">
+               <label for="password">Create Password</label>
+               <input type="password" id="password" name="password" placeholder="Enter your password" required>
+           </div>
+           <!-- User Image Input -->
+           <div class="form-group">
+               <label for="user-image">Upload Your Image</label>
+               <input type="file" id="user-image" name="image" value="<%= user ? user.image : '' %>" accept="image/*" >
+           </div>
+           <!-- Additional Details Input -->
+           <div class="form-group">
+               <label for="additional-details">Additional Qualification Details</label>
+               <textarea id="additional-details" name="details" value="<%= user ? user.details : '' %>" rows="4" placeholder="Tell about Your Stream and Designation" required></textarea>
+           </div>   
+           </div>
+         <!-- Industry Input -->
+            <div class="form-group">
+                <label for="mentee-industry">Industry</label>
+                <select id="mentee-industry" name="industry" value="<%= user ? user.industry : '' %>" required>
+                    <option value="" disabled selected>Select your industry</option>
+                    <option value="technology">Technology</option>
+                    <option value="finance">Finance</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="education">Education</option>
+                    <option value="marketing">Marketing</option>
+                    <!-- Add more industries as needed -->
+                </select>
+            </div>
+            <!-- Experience Level Input -->
+            <div class="form-group">
+                <label for="mentee-experience-level">Experience Level (Position)</label>
+                <select id="mentee-experience-level" name="level" value="<%= user ? user.level : '' %>" required>
+                    <option value="" disabled selected>Select your experience level</option>
+                    <option value="student">Student Level</option>
+                    <option value="entry">Entry Level</option>
+                    <option value="mid">Mid Level</option>
+                    <option value="senior">Senior Level</option>
+                    <option value="executive">Executive Level</option>
+                </select>
+            </div>
+            <!-- Language Input -->
+            <div class="form-group">
+                <label for="mentee-language">Language</label>
+                <select id="mentee-language" name="language" value="<%= user ? user.language : '' %>" required>
+                    <option value="" disabled selected>Select a language</option>
+                    <option value="english">English</option>
+                    <option value="spanish">Spanish</option>
+                    <option value="french">French</option>
+                    <option value="german">German</option>
+                    <option value="mandarin">Mandarin</option>
+                    <!-- Add more languages as needed -->
+                </select>
+            </div>
+            <!-- Finish Registration Button -->
+            <button type="submit" class="submit-button">Register as Mentee</button>
+        </form>
+    </div>
+</section>
+<!-- Mentee Registration Page End -->
+
+<script>
+//    // Mentee Registration Form Submission
+// document.getElementById('menteeRegistrationForm').addEventListener('submit', function (event) {
+//     event.preventDefault(); // Prevent form submission for demonstration
+
+//     alert('Mentee Registration Submitted Successfully!');
+
+//     // Here, you can add logic to submit the form data to your backend
+// });
+
+</script>
+</body>
+</html>

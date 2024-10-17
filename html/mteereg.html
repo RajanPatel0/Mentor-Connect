@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentee Register - Mentor Mentee Platform</title>
+    <link rel="stylesheet" href="mteereg.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<!-- Mentee Registration Page Start -->
+<section class="mentee-registration-section">
+    <div class="mentee-registration-container">
+        <!-- Back Button -->
+        <a href="register.html" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+        <h2 class="mentee-registration-heading">Mentee Register</h2>
+        <form class="mentee-registration-form" id="menteeRegistrationForm">
+            <!-- Industry Input -->
+            <div class="form-group">
+                <label for="mentee-industry">Industry</label>
+                <select id="mentee-industry" name="mentee-industry" required>
+                    <option value="" disabled selected>Select your industry</option>
+                    <option value="technology">Technology</option>
+                    <option value="finance">Finance</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="education">Education</option>
+                    <option value="marketing">Marketing</option>
+                    <!-- Add more industries as needed -->
+                </select>
+            </div>
+            <!-- Experience Level Input -->
+            <div class="form-group">
+                <label for="mentee-experience-level">Experience Level (Position)</label>
+                <select id="mentee-experience-level" name="mentee-experience-level" required>
+                    <option value="" disabled selected>Select your experience level</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+            </div>
+            <!-- Language Input -->
+            <div class="form-group">
+                <label for="mentee-language">Language</label>
+                <select id="mentee-language" name="mentee-language" required>
+                    <option value="" disabled selected>Select a language</option>
+                    <option value="english">English</option>
+                    <option value="spanish">Spanish</option>
+                    <option value="french">French</option>
+                    <option value="german">German</option>
+                    <option value="mandarin">Mandarin</option>
+                    <!-- Add more languages as needed -->
+                </select>
+            </div>
+            <!-- Finish Registration Button -->
+            <button type="submit" class="submit-button">Finish Mentee Registration</button>
+        </form>
+    </div>
+</section>
+<!-- Mentee Registration Page End -->
+
+<script>
+   // Mentee Registration Form Submission
+document.getElementById('menteeRegistrationForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent form submission for demonstration
+
+    alert('Mentee Registration Submitted Successfully!');
+
+    // Here, you can add logic to submit the form data to your backend
+});
+
+</script>
+</body>
+</html>

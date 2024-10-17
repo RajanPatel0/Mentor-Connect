@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Profile - Mentor Mentee Platform</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+      /* Mentor Profile Section */
+.mentor-profile-section {
+    background-color: #f3f4f7;
+    padding: 2rem;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Back Button Styles */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
+    color: #002b5b;
+    border: 2px solid #002b5b;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #ff6700;
+    color: #ffffff;
+}
+
+/* Profile Cards Container */
+.profile-cards-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: auto;
+    margin-top: 20px; /* Adjust for back button */
+    position: relative;
+    padding: 20px 0;
+}
+
+/* Scroll Buttons */
+/* .scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #002b5b;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.left-scroll {
+    left: 10px;
+}
+
+.right-scroll {
+    right: 10px;
+}
+
+.scroll-button:hover {
+    background-color: #ff6700;
+} */
+
+/* Mentor Profile Card */
+.mentor-profile-card {
+    /* background-color: #ffffff;
+    width: 300px;
+    margin: 0 1rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; */
+    flex: 0 0 20%; /* Allows multiple cards to display in a row */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1rem;
+}
+
+.mentor-profile-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Profile Image */
+.mentor-image {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.mentor-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    
+}
+
+/* Mentor Information */
+.mentor-info {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.mentor-info h2 {
+    font-size: 1.5rem;
+    color: #002b5b;
+    margin-bottom: 0.5rem;
+}
+
+.mentor-info p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+/* Schedule */
+.mentor-schedule {
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.mentor-schedule h3 {
+    font-size: 1.2rem;
+    color: #002b5b;
+    margin-bottom: 0.5rem;
+}
+
+.mentor-schedule ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mentor-schedule ul li {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+/* Fix Meeting Button */
+.fix-meeting-button {
+    display: block;
+    margin: 1.5rem auto 0;
+    background-color: #002b5b;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.fix-meeting-button:hover {
+    background-color: #ff6700;
+    transform: scale(1.05);
+}
+
+.mentor-cards-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    margin: 1rem 0;
+    gap: 20px;
+    padding: 1rem;
+}
+/* Scroll Buttons Styles */
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ff6700;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    z-index: 1;
+}
+
+.left-scroll {
+    left: 0;
+}
+
+.right-scroll {
+    right: 0;
+}
+
+.scroll-button:hover {
+    background-color: #e55d00;
+}
+
+    </style>
+
+   </head>
+<body>
+
+<!-- Mentor Profile Page Start -->
+<section class="mentor-profile-section">
+    <!-- Back Button -->
+    <a href="/findmntr" class="back-button"><i class="fas fa-arrow-left"></i> Back to Find Mentor</a>
+    
+    <!-- Profile Cards Container -->
+    <div class="profile-cards-container">
+        <!-- Scroll Buttons -->
+        <button class="scroll-button left-scroll" onclick="scrollLeft()"><i class="fas fa-chevron-left"></i></button>
+
+        <!-- Cards Wrapper -->
+        <div class="mentor-cards-wrapper">
+            <h2 style="text-align: center;">Available Mentors</h2>
+            <% if (mentors && mentors.length > 0) { %>
+                <% mentors.forEach(mentor => { %>
+            <!-- Mentor Profile Card -->
+            <div class="mentor-profile-card">
+                
+                <!-- Profile Image -->
+                <div class="mentor-image">
+                    <!-- <img src="path/to/mentor-image.jpg" alt="Mentor Image"> -->
+                    <img src="<%= mentor.image %>" alt="<%= mentor.name %>'s picture" class="mentor-image">
+                </div>
+                <!-- Profile Information -->
+                <div class="mentor-info">
+                    <h2 class="mentor-name">Mentor Name: <%= mentor.name %></h2>
+                    <p class="mentor-designation">Designation: <%= mentor.details %></p>
+                    <p class="mentor-industry">Industry:  <%= mentor.industry %></p>
+                    <p class="mentor-experience">Experience Level:  <%= mentor.level %></p>
+                    <p class="mentor-language">Language:  <%= mentor.language %></p>
+
+                    <!-- Schedule -->
+                    <div class="mentor-schedule">
+                        <h3>Schedule:</h3>
+                        <ul>
+                            <% Object.entries(mentor.schedule).forEach(([day, time]) => { %>
+                            <li>
+                                <strong><%= day.charAt(0).toUpperCase() + day.slice(1) %>:</strong>
+                                <% if (time && time.start && time.end) { %>
+                                    <%= time.start %> - <%= time.end %>
+                                <% } else { %>
+                                    Not Available
+                                <% } %>
+                            </li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Fix Meeting Button -->
+                <form action="/schedule-meeting" method="post">
+                    <input type="hidden" name="mentorId" value="<%= mentor._id %>">
+                    <button class="fix-meeting-button" onclick="fixMeeting()">Fix Meeting</button>
+                </form>
+            </div>
+            <% }); %>
+                <% } else { %>
+                <p>No mentors found matching your criteria.</p>
+                <% } %>
+
+    
+        </div>
+      
+      <button class="scroll-button right-scroll" onclick="scrollRight()"><i class="fas fa-chevron-right"></i></button>
+   </div>
+</section>
+<!-- Mentor Profile Page End -->
+
+<script>
+   // Function to scroll left
+function scrollLeft() {
+    const cardsWrapper = document.querySelector('.mentor-cards-wrapper');
+    cardsWrapper.scrollBy({
+        left: -300,
+        behavior: 'smooth'
+    });
+}
+
+// Function to scroll right
+function scrollRight() {
+    const cardsWrapper = document.querySelector('.mentor-cards-wrapper');
+    cardsWrapper.scrollBy({
+        left: 300,
+        behavior: 'smooth'
+    });
+}
+
+// Function to handle 'Fix Meeting' button click
+function fixMeeting() {
+    alert('Redirecting to fix meeting page...');
+    // You can add logic here to open a scheduling page or modal
+}
+
+
+</script>
+</body>
+</html>

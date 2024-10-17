@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Mentor</title>
+    <link rel="stylesheet" href="/path/to/your/styles.css"> <!-- Update with your actual CSS file path -->
+</head>
+<body>
+    <h1>Find a Mentor</h1>
+
+    <!-- Mentor Filter Form -->
+    <form action="/findmntr" method="get">
+        <label for="industry">Industry:</label>
+        <input type="text" name="industry" id="industry" required>
+
+        <label for="level">Level:</label>
+        <input type="text" name="level" id="level" required>
+
+        <label for="language">Language:</label>
+        <input type="text" name="language" id="language" required>
+
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Display Mentors -->
+    <% if (mentors && mentors.length > 0) { %>
+        <h2>Available Mentors</h2>
+        <div class="mentor-list">
+            <% mentors.forEach(mentor => { %>
+                <div class="mentor-card">
+                    <img src="<%= mentor.image %>" alt="<%= mentor.name %>'s picture" class="mentor-image">
+                    <h3><%= mentor.name %></h3>
+                    <p><strong>Industry:</strong> <%= mentor.industry %></p>
+                    <p><strong>Level:</strong> <%= mentor.level %></p>
+                    <p><strong>Language:</strong> <%= mentor.language %></p>
+                    <p><strong>Details:</strong> <%= mentor.details %></p>
+
+                    <!-- Display the schedule -->
+                    <h4>Availability</h4>
+                    <ul>
+                        <% Object.entries(mentor.schedule).forEach(([day, time]) => { %>
+                            <li>
+                                <strong><%= day.charAt(0).toUpperCase() + day.slice(1) %>:</strong>
+                                <% if (time && time.start && time.end) { %>
+                                    <%= time.start %> - <%= time.end %>
+                                <% } else { %>
+                                    Not Available
+                                <% } %>
+                            </li>
+                        <% }); %>
+                    </ul>
+
+                    <form action="/schedule-meeting" method="post">
+                        <input type="hidden" name="mentorId" value="<%= mentor._id %>">
+                        <button type="submit">Schedule a Meeting</button>
+                    </form>
+                </div>
+            <% }); %>
+        </div>
+    <% } else { %>
+        <p>No mentors found matching your criteria.</p>
+    <% } %>
+</body>
+</html>
